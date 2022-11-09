@@ -28,18 +28,16 @@ export default function HomePage() {
               <Stack.Item fill>
                 <TextContainer spacing="loose">
                   <Heading>Thank you for installing the Yonda app</Heading>
+                  <p>As your Wingman, we're here to help solve your sales tax problem.</p>
                   <p>
                     For information on Yonda, please refer to {" "}
                     <Link url="https://www.yondatax.com" external>
-                      our website
-                    </Link>
-                    or alternatively {" "}
+                      our website {" "}
+                    </Link> or alternatively {" "}
                     <Link
                       url="https://yondatax.com/contact-us/"
                       external
-                    >
-                      contact us
-                    </Link>{" "}.
+                    >contact us</Link>.
                   </p>
                 </TextContainer>
               </Stack.Item>
