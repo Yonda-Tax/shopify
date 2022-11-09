@@ -11,7 +11,7 @@ COPY web .
 RUN cd frontend && npm install
 RUN bundle install
 
-RUN cd frontend && npm run build --api-key=$SHOPIFY_API_KEY
+RUN cd frontend && npm run build --api-key=SHOPIFY_API_KEY
 RUN rake build:all
 
 COPY entrypoint.sh /usr/bin/
