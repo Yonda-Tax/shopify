@@ -1,5 +1,5 @@
 build:
   docker:
     web: Dockerfile
-  config:
-    SHOPIFY_API_KEY: <SHOPIFY_API_KEY>
+run:
+  web: bundle exec rails server -b 0.0.0.0 -p $PORT
