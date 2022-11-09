@@ -33,7 +33,7 @@ export default function HomePage() {
                     For information on Yonda, please refer to {" "}
                     <Link url="https://www.yondatax.com" external>
                       our website {" "}
-                    </Link> or alternatively {" "}
+                    </Link>or alternatively {" "}
                     <Link
                       url="https://yondatax.com/contact-us/"
                       external
