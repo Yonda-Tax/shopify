@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   get "/api/products/count", to: "products#count"
   get "/api/products/create", to: "products#create"
 
+  # Mandatory Shopify GDPR webhook endpoints
+  post "/api/gdpr/customers/data_request", to: "gdpr#customer_data_request"
+  post "/api/gdpr/customers/redact", to: "gdpr#customer_redact"
+  post "/api/gdpr/shop/redact", to: "gdpr#shop_redact"
+
   # Any other routes will just render the react app
   match "*path" => "home#index", via: [:get, :post]
 end
