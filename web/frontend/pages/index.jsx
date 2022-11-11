@@ -28,17 +28,10 @@ export default function HomePage() {
               <Stack.Item fill>
                 <TextContainer spacing="loose">
                   <Heading>Thank you for installing the Yonda app</Heading>
-                  <p>As your Wingman, we're here to help solve your sales tax problem.</p>
-                  <p>
-                    For information on Yonda, please refer to {" "}
-                    <Link url="https://www.yondatax.com" external>
-                      our website {" "}
-                    </Link>or alternatively {" "}
-                    <Link
-                      url="https://yondatax.com/contact-us/"
-                      external
-                    >contact us</Link>.
-                  </p>
+                  <p>If you're already with us, you don't need to do anything - we will be able to deal with your sales tax filings automatically.</p>
+                  <p>If you don't have a partner to file your sales tax returns for you, you should contact us.</p>
+                  <p><Link url="mailto:hello@yondatax.com" external>Email us</Link> and we'll talk you through everything.</p>
+                  <p>More information can be found on our website <Link url="https://www.yondatax.com">website</Link>.</p>
                 </TextContainer>
               </Stack.Item>
               <Stack.Item>
