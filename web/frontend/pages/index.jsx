@@ -31,7 +31,7 @@ export default function HomePage() {
                   <p>If you're already with us, you don't need to do anything - we will be able to deal with your sales tax filings automatically.</p>
                   <p>If you don't have a partner to file your sales tax returns for you, you should contact us.</p>
                   <p><Link url="mailto:hello@yondatax.com" external>Email us</Link> and we'll talk you through everything.</p>
-                  <p>More information can be found on our website <Link url="https://www.yondatax.com">website</Link>.</p>
+                  <p>More information can be found on our <Link url="https://www.yondatax.com">website</Link>.</p>
                 </TextContainer>
               </Stack.Item>
               <Stack.Item>
