@@ -1,0 +1,2 @@
+class GdprRequest < ApplicationRecord
+end

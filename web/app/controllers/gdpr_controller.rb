@@ -5,14 +5,17 @@ class GdprController < ApplicationController
     CLIENT_SECRET = ENV['SHOPIFY_API_SECRET']
 
     def customer_data_request
+        GdprRequest.create! request_type: 'customer_data_request', request_json: request.body
         render status: :ok, json: {}
     end
 
     def customer_redact
+        GdprRequest.create! request_type: 'customer_redact_request', request_json: request.body
         render status: :ok, json: {}
     end
 
     def shop_redact
+        GdprRequest.create! request_type: 'shop_redact_request', request_json: request.body
         render status: :ok, json: {}
     end
 
