@@ -6,7 +6,7 @@ ShopifyApp.configure do |config|
     # to let your app know.
     { topic: "app/uninstalled", address: "api/webhooks/app_uninstalled" },
   ]
-  config.application_name = "My Shopify App"
+  config.application_name = "Yonda | A Sales Tax Solution"
   config.old_secret = ""
   config.scope = ENV.fetch("SCOPES", "read_orders,read_reports,read_products") # See shopify.app.toml for scopes
   # Consult this page for more scope options: https://shopify.dev/api/usage/access-scopes
