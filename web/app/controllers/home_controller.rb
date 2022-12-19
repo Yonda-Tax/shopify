@@ -14,7 +14,7 @@ class HomeController < ApplicationController
     else
       contents = File.read(File.join(Rails.env.production? ? PROD_INDEX_PATH : DEV_INDEX_PATH, "index.html"))
 
-      logger.info("#{params.as_json} parameters for shop")
+      logger.info("App loaded / installed. #{params.as_json} parameters for shop")
 
       render(plain: contents, content_type: "text/html", layout: false)
     end
