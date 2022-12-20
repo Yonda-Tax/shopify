@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   include ShopifyApp::EmbeddedApp
   include ShopifyApp::RequireKnownShop
   include ShopifyApp::ShopAccessScopesVerification
+  include PortalSubmission
 
   DEV_INDEX_PATH = Rails.root.join("frontend")
   PROD_INDEX_PATH = Rails.public_path.join("dist")
@@ -14,8 +15,8 @@ class HomeController < ApplicationController
     else
       contents = File.read(File.join(Rails.env.production? ? PROD_INDEX_PATH : DEV_INDEX_PATH, "index.html"))
 
-      logger.info("App loaded / installed. #{params.as_json} parameters for shop")
-
+      logger.info("App loaded / installed. #{params.as_json} parameters for shop")      
+      send_notification(shop_domain, 'activated')
       render(plain: contents, content_type: "text/html", layout: false)
     end
   end

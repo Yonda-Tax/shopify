@@ -2,7 +2,8 @@
 
 class AppUninstalledJob < ActiveJob::Base
   extend ShopifyAPI::Webhooks::Handler
-
+  include PortalSubmission
+  
   class << self
     def handle(topic:, shop:, body:)
       perform_later(topic: topic, shop_domain: shop, webhook: body)
@@ -19,5 +20,7 @@ class AppUninstalledJob < ActiveJob::Base
 
     logger.info("#{self.class} started for shop '#{shop_domain}'")
     shop.destroy
+
+    send_notification(shop_domain, 'deactivated')
   end
 end
