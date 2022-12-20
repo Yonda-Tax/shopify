@@ -1,15 +1,12 @@
 module PortalSubmission
     def send_notification(store_url, action)
         host = ENV.fetch('PORTAL_API_HOST')
-        port = ENV.fetch('PORTAL_API_PORT')
         key = ENV.fetch('PORTAL_API_KEY')
-        
-        logger.info("Ready to send '#{store_url}' #{action}")
 
         if action == 'activated'
-            uri = URI("#{host}:#{port}/integrations/activate")
+            uri = URI("#{host}/integrations/activate")
         elsif action == 'deactivated' 
-            uri = URI("#{host}:#{port}/integrations/deactivate")
+            uri = URI("#{host}/integrations/deactivate")
         else
             return
         end
@@ -18,12 +15,9 @@ module PortalSubmission
         req = Net::HTTP::Post.new(uri, 'Content-Type' => 'application/json')
         req.add_field  'Authorization', "Bearer #{key}"
         req.body = payload.to_json
-        res = Net::HTTP.start(uri.hostname, uri.port) do |http|
+        res = Net::HTTP.start(uri.hostname, :use_ssl => uri.scheme == 'https') do |http|
           http.request(req)
         end
-
-        logger.info("Request #{req}")
-        logger.info("Response #{res}")
     end 
 end
  
