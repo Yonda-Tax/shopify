@@ -22,7 +22,8 @@ module PortalSubmission
           http.request(req)
         end
 
-        logger.info("Sent '#{payload.to_json}'")
+        logger.info("Request #{req}")
+        logger.info("Response #{res}")
     end 
 end
  
