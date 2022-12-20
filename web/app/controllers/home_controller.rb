@@ -16,7 +16,7 @@ class HomeController < ApplicationController
       contents = File.read(File.join(Rails.env.production? ? PROD_INDEX_PATH : DEV_INDEX_PATH, "index.html"))
 
       logger.info("App loaded / installed. #{params.as_json} parameters for shop")      
-      send_notification(shop_domain, 'activated')
+      send_notification(params[:shop], 'activated')
       render(plain: contents, content_type: "text/html", layout: false)
     end
   end
